@@ -1,0 +1,144 @@
+body {
+  /*font-family: 'Open Sans', 'sans-serif';*/
+  font-family: 'Arial';
+}
+/* //////////////////////////// */
+.blanki{
+	width:500px;
+}
+.img_blank{
+		width:220px;height:350px;
+	}
+#div_blank{
+		height:200px;
+		box-sizing: border-box;
+		padding: 30px;
+	}
+	
+@media screen and (max-width: 767px) {
+	
+	.blanki{
+	width:350px;
+	}
+	.img_blank{
+		width:50px;height:50px;
+	}
+	#div_blank{
+		height:100px;
+		box-sizing: border-box;
+		padding: 0px;
+	}
+}
+
+
+.navbar {
+    position: relative;
+    min-height: 30px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+
+.navbar-inverse {
+    background-color: #003896;
+    border-color: #003896;
+}  
+
+.navbar-nav>li>a {
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+    line-height: 20px;
+}
+
+.navbar-inverse .navbar-nav>.open>a {
+    background: linear-gradient(to top, #FF9E01, #F2F500);
+   
+       color: #003896;
+}  
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #003896;
+}
+
+
+
+.navbar-inverse .navbar-nav>li:hover {
+  
+    background: linear-gradient(to top, #FF9E01, #F2F500);
+  
+    
+    
+}
+
+/* //////////////////////////// */
+    
+.mega-dropdown {
+  position: static !important;
+}
+.mega-dropdown-menu {
+    padding: 15px 0px;
+    width: 100%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+}
+.mega-dropdown-menu .dropdown-header {
+  font-size: 14px;
+  color: #ff3546;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
+}
+
+.carousel-control {
+  width: 30px;
+  height: 30px;
+  top: -35px;
+
+}
+.left.carousel-control {
+  right: 30px;
+  left: inherit;
+}
+.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-right {
+  font-size: 12px;
+  background-color: #fff;
+  line-height: 30px;
+  text-shadow: none;
+  color: #333;
+  border: 1px solid #ddd;
+}
+.ds-btn li{ list-style:none; float:left; padding:10px; }
+.ds-btn li a span{padding-left:15px;padding-right:5px;width:100%;display:inline-block; text-align:left;}
+.ds-btn li a span small{width:100%; display:inline-block; text-align:left;}
+
+#main img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}

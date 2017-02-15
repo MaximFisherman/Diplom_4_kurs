@@ -1,0 +1,262 @@
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+tr:hover {
+          background-color: black;
+}
+
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+
+.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 50px; }
+.btn.btn-outline { background-color: transparent; }
+
+.navbar-nav.navbar-right .btn:not(.collapsed) {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.navbar-default .nav-collapse,
+.navbar.navbar-inverse .nav-collapse {
+    height: auto !important;
+    transition: transform 0.3s;
+    transform: translate(0px,-50px);
+}
+.navbar.navbar-default .nav-collapse.in,
+.navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px,0px);
+}
+
+
+@media screen and (max-width: 767px) {
+    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+    
+    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+    .navbar .nav-collapse .navbar-form { margin: 0; }
+    .nav-collapse>li { float: none; }
+    
+    .navbar.navbar-default .nav-collapse,
+    .navbar.navbar-inverse .nav-collapse {
+        transform: translate(-100%,0px);
+    }
+    .navbar.navbar-default .nav-collapse.in,
+    .navbar.navbar-inverse .nav-collapse.in {
+        transform: translate(0px,0px);
+    }
+    
+    .navbar.navbar-default .nav-collapse.slide-down,
+    .navbar.navbar-inverse .nav-collapse.slide-down {
+        transform: translate(0px,-100%);
+    }
+    .navbar.navbar-default .nav-collapse.in.slide-down,
+    .navbar.navbar-inverse .nav-collapse.in.slide-down {
+        transform: translate(0px,0px);
+    }
+}
+
+body {
+background-color: #2b2b2b;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top {
+background-color: #fff;
+border-bottom: 2px solid #8e44ad;
+}
+
+a.navbar-brand {
+font-size: 35px;
+}
+
+.contact-heading {
+color: #FFF;
+text-shadow: 2px 2px rgba(0, 0, 0, 0.43);
+text-align: center;
+}
+
+label {
+color: rgba(84, 84, 84, 0.8);
+font-weight: 500;
+padding-bottom: 2px;
+}
+
+.jumbotron {
+border-top: 5px solid rgba(142, 68, 173, 0.63); 
+-webkit-box-shadow: 0 12px 6px -6px rgba(0, 0, 0, 0.12);
+-moz-box-shadow: 0 12px 6px -6px rgba(0, 0, 0, 0.12);
+box-shadow: 0 12px 6px -6px rgba(0, 0, 0, 0.12);
+}
+
+.glyphicon {
+ color:    
+}   
+
+.conversation-wrap
+    {
+        box-shadow: -2px 0 3px #ddd;
+        padding:0;
+        max-height: 400px;
+        overflow: auto;
+    }
+    .conversation
+    {
+        padding:5px;
+        border-bottom:1px solid #ddd;
+        margin:0;
+
+    }
+
+    .message-wrap
+    {
+        box-shadow: 0 0 3px #ddd;
+        padding:0;
+
+    }
+    .msg
+    {
+        padding:8px;
+        border-bottom:1px solid rgba(240, 239, 239, 0.66);
+        margin:0;
+    }
+    .msg-wrap
+    {
+        padding:10px;
+        max-height: 400px;
+        overflow: auto;
+
+    }
+
+    .time
+    {
+        color:#bfbfbf;
+    }
+
+    .send-wrap
+    {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding:10px;
+        /*background: #f8f8f8;*/
+    }
+
+    .send-message
+    {
+        resize: none;
+    }
+
+    .highlight
+    {
+        background-color: #f7f7f9;
+        border: 1px solid #e1e1e8;
+    }
+
+    .send-message-btn
+    {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+
+        border-bottom-right-radius: 0;
+    }
+    .btn-panel
+    {
+        background: #f7f7f9;
+    }
+
+    .btn-panel .btn
+    {
+        color:#b8b8b8;
+
+        transition: 0.2s all ease-in-out;
+    }
+
+    .btn-panel .btn:hover
+    {
+        color:#666;
+        background: #f8f8f8;
+    }
+    .btn-panel .btn:active
+    {
+        background: #f8f8f8;
+        box-shadow: 0 0 1px #ddd;
+    }
+
+    .btn-panel-conversation .btn,.btn-panel-msg .btn
+    {
+
+        background: #f8f8f8;
+    }
+    .btn-panel-conversation .btn:first-child
+    {
+        border-right: 1px solid #ddd;
+    }
+
+    .msg-wrap .media-heading {
+        color: #6498DD;
+        font-weight: 500;
+    }
+
+    .msg-date
+    {
+        background: none;
+        text-align: center;
+        color:#aaa;
+        border:none;
+        box-shadow: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    body::-webkit-scrollbar {
+        width: 12px;
+    }
+ 
+    
+    /* Let's get this party started */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+/*        -webkit-border-radius: 10px;
+        border-radius: 10px;*/
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+/*        -webkit-border-radius: 10px;
+        border-radius: 10px;*/
+        background:#ddd; 
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: #ddd; 
+    }
+
+
+.panel-footer {
+padding: 10px 15px;
+background-color: #f5f5f5;
+border-top: 1px solid #ddd;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+}
+
+

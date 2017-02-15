@@ -1,0 +1,250 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ДПС</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+   @import url("css/Dai_start_page.css");
+	</style>
+
+  </head>
+  <body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+<!-- Top menu -->
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="Dai_start_page.html">Протоколы</a></li>
+                    <li><a href="#about">Збірка новин</a></li>
+                    <li class="active"><a href="Dai_patrul_page.html">Керування патрульними</a></li>
+                    <li><a href="#contact">Справка</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Информация о профиле</a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#">Выйти из профиля</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Поддержка</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Поліцейські</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-15 well">
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#usuario"><i class="fa fa-fw -square -circle fa-plus-square"></i>Добавить полицейського</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- search -->
+    <div class="section">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-13 well" >
+                    <input id="search_name" name="search_name" class="form-group" placeholder="Им'я" type="text" required="" >	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+                    <input id="search_email" name="search_email" class="form-group" placeholder="Email" type="text" required="" >&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+                    <input id="search_position" name="search_position" class="form-group" placeholder="посада" type="text" required="" >&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+                    <input id="search_police_department" name="search_police_department" class="form-group" placeholder="поліцейськка частина" type="text" required="" >&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+                    <input id="search_number" name="search_number" class="form-group" placeholder="номер жетону" type="text" required="" ><br>
+                    <button name="add_police_user" onclick="Search_police_user()" type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i>Начать поиск</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                        <div id="table_police_user" >
+                        </div>
+
+
+    <div class="fade modal" id="usuario">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title" id="myModalLabel">Новый полiцейський</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" action="php/add_in_table_police_user.php" method="post" enctype="multipart/form-data" >
+                        <fieldset>
+                            <!-- Form Name -->
+                            <!-- Prepended text-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="prependedtext">Им'я та фамiлiя</label>
+                                <div class="col-md-5">
+                                    <div class="input-group">
+                                        <span class="input-group-addon glyphicon glyphicon-edit"></span>
+                                        <input id="prependedtext" name="name" class="form-control" placeholder="Им'я та фамiлiя" type="text" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- telephone text-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nombre">Номер телефону</label>
+                                <div class="col-md-5">
+                                    <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-earphone"></i>
+                                            </span>
+                                        <input id="nombre" name="number_phone" class="form-control" placeholder="номер телеофону" type="text" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- position -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nombre">Посада</label>
+                                <div class="col-md-5">
+                                    <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                        <input id="position" name="position" class="form-control" placeholder="посада" type="text" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Appended Input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="email">e-mail</label>
+                                <div class="col-md-5">
+                                    <div class="input-group">
+
+                                        <input id="email_police" name="email" class="form-control" placeholder="" type="email" required="">
+                                        <span class="input-group-addon">
+                                                <i class="fa fa-envelope"></i>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="departamento">Поліцейська частина</label>
+                                <div class="col-md-5">
+                                    <select id="departamento" name="police_department" class="form-control">
+                                        <option value="Овiдiопольский вітділ поліції">Овiдiопольский вітділ поліції</option>
+                                        <option value="Суворовский вітділ полиції">Суворовский вітділ полиції</option>
+                                        <option value="Києвскій вітділ полиції"> Києвскій вітділ полиції</option>
+                                        <option value="Хаджибеевский вітділ полиции">Хаджибеевский вітділ полиции </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- File Button -->
+                            <!-- Password input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="password">Номер жетону</label>
+                                <div class="col-md-5">
+                                    <input name="number_cheton" type="text" placeholder="Номер жетону" class="form-control input-md" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="password">Пароль</label>
+                                <div class="col-md-5">
+                                    <input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
+                                    Фото: <input name="photo_police_user" multiple type="file" />
+                                    <input type="submit" value="save" class="btn-primary">
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function Search_police_user() {
+        var name1 = $('input[name = search_name]').val();
+        var email1 = $('input[name = search_email]').val();
+        var police_department1 = $('select[name = search_police_department]').val();
+        var number1 = $('input[name = search_number]').val();
+        var position1 = $('input[name = search_position]').val();
+
+        $.post("php/add_in_table_police_user.php", {search_position:position1,search_name:name1,search_email:email1,search_police_department:police_department1,search_number_cheton:number1}, function (str) {
+            $('#table_police_user').html(str);
+        });
+    }
+/*
+    function add_police_user_in_bd()
+        {
+            var name1 = $('input[name = name_police]').val();
+            var number_phone1 = $('input[name = number_phone]').val();
+            var email1 = $('input[name = email]').val();
+            var police_department1 = $('select[name = police_department]').val();
+            var number_cheton1 = $('input[name = number_cheton]').val();
+            var password1 = $('input[name = password]').val();
+            var position1 = $('input[name = position]').val();
+
+            $.post("php/add_in_table_police_user.php", {position:position1,name:name1,number_phone:number_phone1,email:email1,police_department:police_department1,number_cheton:number_cheton1,password:password1}, function (str) {
+                $('#table_police_user').html(str);
+            });
+            alert("Ви дoдали поліцеського");
+        }
+*/
+    //Delete user police
+    function Delete_user_police() {
+        $(".id_class").on("click", function(){
+            var id1 = $(this).attr("id");
+            $.post("php/add_in_table_police_user.php", {id: id1}, function (str) {
+                $('#table_police_user').html(str);
+            });
+        });
+    }
+//Пока не пашет проверить 
+    function Change_user_police(){
+        $(".id_class").on("click", function(){
+            var id1 = $(this).attr("id");
+            alert(id1);
+            $.post("php/add_in_table_police_user.php", {id_change: id1}, function (str) {
+                $('#table_police_user').html(str);
+            });
+        });
+    }
+    $.post("php/add_in_table_police_user.php", {}, function (str) {
+        $('#table_police_user').html(str);
+    });
+</script>
+  </body>
+</html>

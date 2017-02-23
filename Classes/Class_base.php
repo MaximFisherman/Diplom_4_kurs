@@ -396,12 +396,63 @@ $i++;
 ');
     }
 
+
+
+    function add_new_news($title,$name,$description,$type_news,$path_file){
+            $str="Insert into News(Name,Article,Description,Path_photo,type_news) VALUES ('".$name."','".$title."','".$description."','".$path_file."','".$type_news."');";
+            mysql_query($str,$this->dlink);
+    }
+
+    function view_table_news($number_page){
+        //Высчитываем общее количество страниц
+        $str="Select id_news,Name,Article,Description,Path_photo,type_news from News";
+        $res= mysql_query($str,$this->dlink);
+        $col_rows=mysql_num_rows($res);
+
+
+        //Постраничное отображение
+        $count = 10;// Количество записей на странице.
+        $shift = $count * ($number_page - 1);// Смещение в LIMIT. Те записи, порядковый номер которого больше этого числа, будут выводиться.
+        $str="Select id_news,Name,Article,Description,Path_photo,type_news from News limit ".$shift.",".$count.";";
+        $res= mysql_query($str,$this->dlink);
+
+
+
+
+        while($arr = mysql_fetch_array($res)) {
+            if (trim($arr["type_news"]) == "Угон автомобiля") echo("<tr class=\"Car_wanted\">");
+            if (trim($arr["type_news"]) == "Людина в розшуку") echo("<tr class=\"Criminals_wanted\">");
+            if (trim($arr["type_news"]) == "Зниклий безвiсти") echo("<tr class=\"Missing_people\">");
+            echo(" 
+                                <tr class=\"Missing_people\">
+                                    <td class=\"avatar\"><img src=\"php/" . $arr["Path_photo"] . "\"></td>
+                                    <td>" . $arr["Name"] . "</td>
+                                    <td>" . $arr["Article"] . "</td>
+                                    <td>" . $arr["Description"] . " </td>
+                                    <td align=\"center\">
+                                        <a href=\"#\" class=\"btn btn-primary\" title=\"Edit\"   id='" . $arr["id_news"] . "' ><i class=\"fa fa-pencil\">    	</i></a>
+                                        <a href=\"#\" class=\"btn btn-warning\" title=\"Прочитати\"	id='" . $arr["id_news"] . "' ><i class=\"glyphicon glyphicon-folder-open\"   ></i></a>
+                                        <a href=\"#\" class=\"btn btn-danger\"  title=\"delete\" id='" . $arr["id_news"] . "' ><i class=\"fa fa-trash\" >		</i></a>
+                                    </td>
+                                </tr>");
+        }
+
+            $col_page = $col_rows / 10;
+
+            for ($i = 0; $i <= $col_page; $i++) {
+                $count_page = $i + 1;
+                echo("<script>$('#position_page').append('<li id=\"".$count_page."\"> <a  href=\"php/Table_view_news.php?page=" . $count_page . " \">" . $count_page . "</a></li>');</script>");
+            }
+            $number_page += 1;
+            echo("<script>$('#position_page').append('<li><a href=\"php/Table_view_news.php?page=" . $number_page . " \">»</a></li>');</script>");
+            //echo("<script>$('#position_page').append('<li ><a>«</a></li><li class=\"active\"><a href=\"#\">1</a></li><li ><a href=\"#\">2</a></li> <li ><a href=\"#\">3</a></li><li ><a>»</a></li>');</script>"); }
+        }
+
     function Change_police_user($number){
         $str="Select type_user,email,number_phone,first_name,number,password,police_department,position,path_user_police_photo from user where type_user like '%police%' and number like '%".$number."%'";
         $res= mysql_query($str,$this->dlink);
         while($arr = mysql_fetch_array($res)) {
             echo("<script> $('#email').text('".$arr["email"]."');</script>");
-
         }
     }
 

@@ -423,12 +423,13 @@ $i++;
             if (trim($arr["type_news"]) == "Угон автомобiля") echo("<tr class=\"Car_wanted\">");
             if (trim($arr["type_news"]) == "Людина в розшуку") echo("<tr class=\"Criminals_wanted\">");
             if (trim($arr["type_news"]) == "Зниклий безвiсти") echo("<tr class=\"Missing_people\">");
+            $sub_description =  substr($arr["Description"],0,50);
             echo(" 
                                 <tr class=\"Missing_people\">
                                     <td class=\"avatar\"><img src=\"php/" . $arr["Path_photo"] . "\"></td>
                                     <td>" . $arr["Name"] . "</td>
                                     <td>" . $arr["Article"] . "</td>
-                                    <td>" . $arr["Description"] . " </td>
+                                    <td>" .$sub_description. " </td>
                                     <td align=\"center\">
                                         <a href=\"#\" class=\"btn btn-primary\" title=\"Edit\"   id='" . $arr["id_news"] . "' ><i class=\"fa fa-pencil\">    	</i></a>
                                         <a href=\"#\" class=\"btn btn-warning\" title=\"Прочитати\"	id='" . $arr["id_news"] . "' ><i class=\"glyphicon glyphicon-folder-open\"   ></i></a>

@@ -14,4 +14,11 @@ if(isset($_GET["page"])) {
 
     echo("<script>location.replace('../Dai_news_page.html')</script>");
 }
+
+
+//Удаление новости
+if(isset($_GET["delete_news"])){
+    $obj->delete_news($_GET['id_news']);
+    echo("<script>location.replace('../Dai_news_page.html')</script>");
+}
 ?>

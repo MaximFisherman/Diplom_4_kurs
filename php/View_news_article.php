@@ -25,10 +25,10 @@
 <form class="form-horizontal" action="Edit_news.php" method="post" enctype="multipart/form-data">
         <fieldset>
         <!-- Form Name -->
-        <legend align="center">Редагування новини</legend>
+        <legend align="center" id="header_change">Редагування новини</legend>
         <!--image news-->
         <div class="form-group" style="text-align: center;">
-            <img src="" id="image_news" height='300' width='400' align="center">
+            <img src="" id="image_news" height='400' width='600' align="center">
         </div>
 
         <!-- Text input-->
@@ -60,7 +60,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" >Тип новини</label>
                 <div class="col-md-4">
-                    <select name="type_news" class="form-control">
+                    <select name="type_news" id="List_type_news" class="form-control">
                         <option value="Угон автомобiля">Угон автомобiля</option>
                         <option value="Людина в розшуку">Людина в розшуку</option>
                         <option value="Зниклий безвiсти"> Зниклий безвiсти </option>
@@ -69,9 +69,9 @@
             </div>
 
             <!-- File Button -->
-            <div class="form-group">
+            <div class="form-group" id="button_save_file_photo_news">
                 <label class="col-md-4 control-label">Додаток</label>
-                <div class="col-md-5">
+                <div class="col-md-5" >
                     Фото: <input name="photo_news" enctype="multipart/form-data" multiple type="file" />
                 </div>
             </div>
@@ -79,8 +79,8 @@
             <!-- Submit input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="tel"></label>
-                <div class="col-md-4">
-                    <input type="submit"  value="Сохранити" class="btn btn-danger form-control input-md">
+                <div class="col-md-4" id="button_save_edit_news">
+                    <input type="submit"   value="Сохранити" class="btn btn-danger form-control input-md">
                 </div>
             </div>
 
@@ -102,16 +102,28 @@
 
 
 <?php
-if(strcmp($_GET["file"],'edit')) {
+if($_GET["file"]==1) {
     echo("<script>$('#id_news').val('" . $_GET['id_news'] . "');</script>");
     echo("<script>$('#image_news').attr('src','../php/" . $_GET['path_photo'] . "')</script>");
     echo("<script>$('#id_path_photo').val('../php/" . $_GET['path_photo']."')</script>");
     echo("<script>$('#description_news_id').text('" . $_GET['description_news'] . "');</script>");
     echo("<script>$('#name_news_id').val('" . $_GET['name_news'] . "');</script>");
     echo("<script>$('#title_news_id').val('" . $_GET['title_news'] . "');</script>");
+
+    //Проверка типа новосте  и вывод соотвествуйщего типа новости
+    if ($_GET["type_news"]==1){
+        echo("<script>  $('#List_type_news :nth-child(1)').attr('selected', 'selected');</script> ");
+    }
+
+    if ($_GET["type_news"]==2) {
+        echo("<script>  $('#List_type_news :nth-child(2)').attr('selected', 'selected');</script> ");
+    }
+    if ($_GET["type_news"]==3) {
+        echo("<script>  $('#List_type_news :last').attr('selected', 'selected');</script> ");
+    }
 }
 
-if(strcmp($_GET["file"],'view')) {
+if($_GET["file"]==2) {
     echo("<script>$('#id_news').val('" . $_GET['id_news'] . "');</script>");
     echo("<script>$('#image_news').attr('src','../php/" . $_GET['path_photo'] . "')</script>");
     echo("<script>$('#id_path_photo').val('../php/" . $_GET['path_photo']."')</script>");
@@ -121,6 +133,25 @@ if(strcmp($_GET["file"],'view')) {
 
 
     echo("<script> $('#title_news_id').attr('disabled', true);</script>");
+    echo("<script> $('#name_news_id').attr('disabled', true);</script>");
+    echo("<script> $('#description_news_id').attr('disabled', true);</script>");
 
+    //Проверка типа новосте  и вывод соотвествуйщего типа новости
+    if ($_GET["type_news"]==1){
+        echo("<script>  $('#List_type_news :nth-child(1)').attr('selected', 'selected');</script> ");
+    }
+
+    if ($_GET["type_news"]==2) {
+        echo("<script>  $('#List_type_news :nth-child(2)').attr('selected', 'selected');</script> ");
+    }
+    if ($_GET["type_news"]==3) {
+        echo("<script>  $('#List_type_news :last').attr('selected', 'selected');</script> ");
+    }
+
+    echo("<script> $('#header_change').empty();</script>");
+    echo("<script> $('#header_change').text('Просмотр новини');</script>");
+    echo("<script> $('#button_save_file_photo_news').empty();</script>");
+    echo("<script> $('#button_save_edit_news').empty();</script>");
+    echo("<script> $('#List_type_news').attr('disabled', true);</script>");
 }
 ?>

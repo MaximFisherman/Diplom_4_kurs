@@ -4,10 +4,10 @@ include("../Classes/Class_base.php");
 $obj = new Base();
 
 if($_SESSION["page_number"]=='')
-    $obj->view_table_news(1);
-
-$obj->view_table_news($_SESSION["page_number"]);
-
+    $obj->view_table_news(1,$_POST["input_search_name"]);
+else {
+    $obj->view_table_news($_SESSION["page_number"],$_POST["input_search_name"]);
+}
 if(isset($_GET["page"])) {
     //unset($_GET["page"]);
     $_SESSION["page_number"]=$_GET["page"];

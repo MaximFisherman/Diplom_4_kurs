@@ -10,8 +10,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style type="text/css">
-        @import url("css/Dai_news_page.css");
+        @import url("css/Police_news_page.css");
     </style>
+    <link rel="stylesheet" href="css/Police_news_page.css">
 
 </head>
 <body>
@@ -34,9 +35,9 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="Dai_start_page.html">Протоколы</a></li>
-                <li class="active"><a href="Dai_news_page.html">Збірка новин</a></li>
-                <li><a href="Dai_patrul_page.html">Керування патрульними</a></li>
+                <li><a href="Police_start_page_blank.html">Протоколи</a></li>
+                <li><a href="#about">Маршруты</a></li>
+                <li class="active"><a href="Police_news_page.html">Новини</a></li>
                 <li><a href="#contact">Справка</a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль <span class="caret"></span></a>
@@ -52,7 +53,6 @@
         </div>
     </div>
 </div>
-
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -80,9 +80,6 @@
                             <button id="Missing_people" class="btn btn-warning" data-class="btn btn-warning" onclick="filter('Missing_people')">&nbsp;Зниклі безвісти</button>
                             <button id="Car_wanted" class="btn btn-success" data-class="btn btn-success" onclick="filter('Car_wanted')">Автомобілі в угоні</button>
                         </div>
-                        <div class="col col-xs-2 text-right ">
-                                            <a class="btn  btn-success" data-toggle="modal" data-target="#usuario"><i class="fa fa-fw -square -circle fa-plus-square"></i>Добавить</a>
-                        </div>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -98,7 +95,6 @@
                                     <th><em class="fa fa-cog"></em></th>
                                 </tr>
                                 </thead>
-
                                 <tbody id="Table_news_vivod">
 
                                 </tbody>
@@ -106,7 +102,7 @@
                         </div><!-- END id="list" -->
 
 
-<!-- Вид в виде карточек -->
+                        <!-- Вид в виде карточек -->
                         <div role="tabpanel" class="tab-pane " id="thumb">
                             <div class="row">
                                 <div class="col-md-12">
@@ -182,94 +178,16 @@
     </div>
 </div>
 
-
-
-<!-- Modal window add -->
-<div class="fade modal" id="usuario">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="modal-title" id="myModalLabel">Нова стаття </h2>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" action="php/Upload_news.php" method="post" enctype="multipart/form-data" >
-                    <fieldset>
-                        <!-- Form News -->
-                        <!-- Title text-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Заголовок</label>
-                            <div class="col-md-5">
-                                <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="glyphicon glyphicon-font"></i>
-                                            </span>
-                                    <input id="Title_news" name="Title_news" class="form-control" placeholder="Заголовок" type="text" required="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Name text-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Им'я(марка)</label>
-                            <div class="col-md-5">
-                                <div class="input-group">
-                                    <span class="input-group-addon glyphicon glyphicon-edit"></span>
-                                    <input id="Name_news" name="Name_news" class="form-control" placeholder="Им'я та фамiлiя" type="text" required="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- List type -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" >Тип новини</label>
-                            <div class="col-md-5">
-                                <select name="Type_news" class="form-control">
-                                    <option value="Угон автомобiля">Угон автомобiля</option>
-                                    <option value="Людина в розшуку">Людина в розшуку</option>
-                                    <option value="Зниклий безвiсти"> Зниклий безвiсти </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Опис</label>
-                            <div class="col-md-5">
-                                <div class="input-group">
-                                    <textarea class="form-control" name="Description" rows="7" cols="30"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- File Button -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Додаток</label>
-                            <div class="col-md-5">
-                                Фото: <input name="photo_news" multiple type="file" />
-                                <input type="submit" value="save" class="btn-primary">
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
 <script type="text/javascript">
     function Search_news(){
         var input_search_name1 = $('input[name = input_search_name]').val();
-        $.post("php/Table_view_news.php", {input_search_name:input_search_name1}, function (str) {
+        $.post("php/Table_view_news_police.php", {input_search_name:input_search_name1}, function (str) {
             $('#Table_news_vivod').html(str);
         });
     }
 
-    var View_police1=true;
     //Upload news to table
-    $.post("php/Table_view_news.php", {View_police:View_police1}, function (str) {
+    $.post("php/Table_view_news_police.php", {}, function (str) {
         $('#Table_news_vivod').html(str);
     });
 

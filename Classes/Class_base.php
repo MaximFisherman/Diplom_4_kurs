@@ -1,7 +1,5 @@
 <?php 
 session_start();
-
-
 class Base 
 {
 	public $dlink;
@@ -634,7 +632,24 @@ function delete_news($id_news){
         }
     }
 
-	function __destruct ()
+    function save_layers($out){
+        $str="Insert into layers_map(out_layer) VALUES ('".$out."');";
+        mysql_query($str,$this->dlink);
+
+    }
+
+    function select_layers(){
+        $str="Select out_layer from layers_map";
+        $res= mysql_query($str,$this->dlink);
+        $mas_string_layer = null;
+        while($arr = mysql_fetch_array($res)) {
+            $mas_string_layer .= $arr['out_layer'].'%';
+        }
+        echo($mas_string_layer);
+    }
+
+
+    function __destruct ()
 	{
 		mysql_close($this->dlink);
 	}

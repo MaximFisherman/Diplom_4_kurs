@@ -615,15 +615,17 @@ $i++;
         }
     }
 
-function delete_news($id_news){
-    $str="DELETE FROM News WHERE id_news=".$id_news." ";
-    mysql_query($str,$this->dlink);
-}
+    function delete_news($id_news){
+        $str="DELETE FROM News WHERE id_news=".$id_news." ";
+        mysql_query($str,$this->dlink);
+    }
+
     function edit_news($id_news,$name,$title,$description,$path_photo,$type_news){
             $str="UPDATE `News` SET `Name`='".$name."',`Article`='".$title."',`Description`='".$description."',`Path_photo`='".$path_photo."',`type_news`='".$type_news."' WHERE id_news=".$id_news."; ";
             $res=mysql_query($str,$this->dlink);
             //if($res)echo("Ok!");else echo("No ok!");
     }
+
     function Change_police_user($number){
         $str="Select type_user,email,number_phone,first_name,number,password,police_department,position,path_user_police_photo from user where type_user like '%police%' and number like '%".$number."%'";
         $res= mysql_query($str,$this->dlink);
@@ -648,6 +650,15 @@ function delete_news($id_news){
         echo($mas_string_layer);
     }
 
+    function delete_layers($name_layers_whole){
+        $mas_name_layers = explode("%", $name_layers_whole);
+        for($i=0;$i<count($mas_name_layers);$i++) {
+            echo( $mas_name_layers[$i]."<br>");
+            $str = "DELETE FROM layers_map WHERE out_layer like '%" . $mas_name_layers[$i] . "%' ";
+            mysql_query($str, $this->dlink);
+        }
+
+    }
 
     function __destruct ()
 	{

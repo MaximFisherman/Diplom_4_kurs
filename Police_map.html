@@ -24,6 +24,7 @@
 
 
     <style type="text/css">
+		html { overflow:  hidden; }
         @import url("css/Dai_map.css");
     </style>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -32,9 +33,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<!-- Top menu -->
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: blue;">
+
+<!-- Top menu -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,17 +48,16 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="Dai_start_page.html">Протоколы</a></li>
-                <li><a href="Dai_news_page.html">Збірка новин</a></li>
-                <li><a href="Dai_patrul_page.html">Керування патрульними</a></li>
-                <li class="active"><a href="Dai_map.html">Карта маршрутiв</a></li>
+                <li><a href="Police_start_page_blank.html">Протоколи</a></li>
+                <li class="active"><a href="Police_map.html">Маршруты</a></li>
+                <li><a href="Police_news_page.html">Новини</a></li>
                 <li><a href="#contact">Справка</a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль <span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a href="#">Информация о профиле</a></li>
                         <li><a href="#"></a></li>
-                        <li><a href="#">Выйти из профиля</a></li>
+                        <li><a href="Authorization_page.html">Выйти из профиля</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Поддержка</a></li>
                     </ul>
@@ -65,7 +66,6 @@
         </div>
     </div>
 </div>
-
 <br><br><br>
 <!-- "layer viewer" component -->
 <script type="text/javascript">
@@ -1178,23 +1178,25 @@ function click_del_layers(){
 
 </script>
 
-<div class="row">
-    <div class="col-md-6">
-        Просмотр слоёв:
+<div class="row" style="
+    margin-top: -7;
+    margin-right: -10;
+    margin-left: -10;
+">
+    <div class="col-md-12">
         <div style="float:left;width:100%; height:40px; background-color:cadetblue;">
-            <input CLASS="form-control" onkeyup='checkParams()' type="text" style='position: relative;margin: 0 auto;top: 10%;left:-40%; width:160px; height:30px;' id="search_layer">
-            <input CLASS="form-control" id="test1" onclick="click_del_layers();" name="delete_layers" type="button" style='position:relative;margin: 0 auto;top: -60%;left:39%;width:160px;height:30px;' value="Удалити вибранi слої">
+            <input CLASS="form-control" onkeyup='checkParams()' type="text" style='position: relative;margin: 0 auto;top: 10%;left:-40%; width:200px; height:30px;' id="search_layer">
+            <input CLASS="form-control" id="test1" onclick="click_del_layers();" name="delete_layers" type="button" style='position:relative;margin: 0 auto;top: -60%;left:39%;width:160px;height:30px; display:none;' value="Удалити вибранi слої">
         </div>
         <div>
-            <div style="float:left;padding:0;width:20%;height:560px;background-color:lightgray;">
+            <div style="float:left;padding:0;width:20%;height:85%;background-color:lightgray;">
                 <div id="layers" style="padding:2pt;"></div>
             </div>
-            <div id="map" style="width:80%;height:560px; border: 3px solid gray;"></div>
+            <div id="map" style="width:80%;height:85%; border: 3px solid gray;"></div>
         </div>
     </div>
 
-
-    <div class="col-md-6">
+    <div class="col-md-1" id="editor_div" style="display:none;">
         Редактирование слоёв:
         <div id="test_input"></div>
         <div>

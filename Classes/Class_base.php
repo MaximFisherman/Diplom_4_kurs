@@ -60,31 +60,26 @@ class Base
 				$password_bd=$arr['password'];	
 				$type_user=$arr['type_user'];				
 		} 
-		
+
 		if($login==$number&&$password==$password_bd&&$type_user=="dai")
 		{ 
-			$_SESSION["avt_user"]=$number;
-			echo"<script>document.location.replace('Dai_start_page.html');</script>";
+			$_SESSION["avt_user"]=$type_user;
 		}else{
-	
 		}
-		
 		if($login==$number&&$password==$password_bd&&$type_user=="police")
 		{ 
-			$_SESSION["avt_user"]=$number;
-			echo"<script>document.location.replace('Police_start_page_blank.html');</script>";
+			$_SESSION["avt_user"]=$type_user;
 		}else{
-		
 		}
 		
 		if($login==$number&&$password==$password_bd&&$type_user=="user")
 		{
-			$_SESSION["avt_user"]=$number;
-			echo"<script>document.location.replace('User_start_page_fines.html');</script>";
+			$_SESSION["avt_user"]=$type_user;
+
 		}else{
 			
 		}
-		echo"<script>document.location.replace('Authorization_page.html');</script>";
+		//echo"<script>document.location.replace('Authorization.php');</script>";
 		
 	}
 	
@@ -655,6 +650,7 @@ $i++;
         for($i=0;$i<count($mas_name_layers);$i++) {
             echo( $mas_name_layers[$i]."<br>");
             $str = "DELETE FROM layers_map WHERE out_layer like '%" . $mas_name_layers[$i] . "%' ";
+            mysql_query($str, $this->dlink);
             mysql_query($str, $this->dlink);
         }
 

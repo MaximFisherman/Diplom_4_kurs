@@ -36,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User_start_page_fines.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User_start_page_fines.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User_start_page_fines.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Font.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Font.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/Font.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="49" lean-forward="false" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
+            <state relative-caret-position="51">
+              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -343,12 +343,12 @@
       <workItem from="1490001384149" duration="1140000" />
       <workItem from="1490087842627" duration="8933000" />
       <workItem from="1490103818638" duration="1022000" />
-      <workItem from="1490104877086" duration="1832000" />
+      <workItem from="1490104877086" duration="1912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137635000" />
+    <option name="totallyTimeSpent" value="137715000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/Font.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="49" lean-forward="false" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/User_page_help.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -862,6 +854,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/Font.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
       </provider>

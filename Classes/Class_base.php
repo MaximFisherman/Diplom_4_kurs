@@ -63,19 +63,21 @@ class Base
 
 		if($login==$number&&$password==$password_bd&&$type_user=="dai")
 		{ 
-			$_SESSION["avt_user"]=$type_user;
+			$_SESSION["avt_user"]=$number;
+            $_SESSION["type_avt_user"]=$type_user;
 		}else{
 		}
 		if($login==$number&&$password==$password_bd&&$type_user=="police")
 		{ 
-			$_SESSION["avt_user"]=$type_user;
+			$_SESSION["avt_user"]=$number;
+            $_SESSION["type_avt_user"]=$type_user;
 		}else{
 		}
 		
 		if($login==$number&&$password==$password_bd&&$type_user=="user")
 		{
-			$_SESSION["avt_user"]=$type_user;
-
+			$_SESSION["avt_user"]=$number;
+            $_SESSION["type_avt_user"]=$type_user;
 		}else{
 			
 		}

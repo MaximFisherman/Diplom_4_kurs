@@ -40,5 +40,4 @@ if (isset($_SESSION["business_telephone"])) {
     unset($_SESSION["road_marking"]);
     unset($_SESSION["signs"]);
 }
-
 ?>

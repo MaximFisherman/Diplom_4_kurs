@@ -343,12 +343,12 @@
       <workItem from="1490001384149" duration="1140000" />
       <workItem from="1490087842627" duration="8933000" />
       <workItem from="1490103818638" duration="1022000" />
-      <workItem from="1490104877086" duration="3008000" />
+      <workItem from="1490104877086" duration="3111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138811000" />
+    <option name="totallyTimeSpent" value="138914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,7 +361,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10612691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04617117" sideWeight="0.48720682" order="6" side_tool="false" content_ui="tabs" />

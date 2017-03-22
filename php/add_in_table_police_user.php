@@ -35,5 +35,5 @@ if(isset($_POST['id'])){
 }
 
 
-$obj->view_police_user($_POST['search_position'],$_POST['search_name'],$_POST['search_email'],$_POST[',search_police_department'],$_POST['search_number_cheton']);
+$obj->view_police_user($_POST['search_position'],$_POST['search_name'],$_POST['search_email'],$_POST['search_police_department'],$_POST['search_number_cheton']);
 ?>
